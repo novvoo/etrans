@@ -84,7 +84,7 @@ func buildBackend() error {
 		outputName += ".exe"
 	}
 
-	cmd := exec.Command("go", "build", "-o", "../"+outputName)
+	cmd := exec.Command("go", "build", "-ldflags", "-s -w", "-o", "../"+outputName)
 	cmd.Dir = "backend"
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr

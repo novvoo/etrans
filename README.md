@@ -39,6 +39,58 @@ etrans/
 - **进度回调**: 支持翻译进度回调
 - **错误处理**: 完善的错误处理和日志记录
 
+## 快速开始
+
+### 准备工作
+
+确保您的系统已安装以下环境：
+- [Go](https://go.dev/dl/) 1.24+
+- [Node.js](https://nodejs.org/) (用于前端构建)
+
+### 开发环境
+
+在开发模式下，后端会自动代理前端请求，无需单独运行前端服务。
+
+```bash
+# Windows (使用批处理脚本)
+.\start.bat
+
+# Linux/macOS
+make dev
+```
+
+启动后访问: http://localhost:8080
+
+### 编译构建
+
+构建生产版本（包含前端静态资源和后端可执行文件）：
+
+```bash
+# Windows
+go run build.go
+
+# Linux/macOS
+make build
+```
+
+构建完成后，运行生成的 `etrans` 或 `etrans.exe` 即可启动服务。
+
+### Docker 部署
+
+使用 Docker 快速部署服务：
+
+```bash
+# 构建镜像
+make docker-build
+# 或
+docker build -t etrans .
+
+# 启动服务
+make docker-run
+# 或
+docker-compose up -d
+```
+
 ## 使用方法
 
 ### 基本用法
